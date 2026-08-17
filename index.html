@@ -8,7 +8,7 @@
   :root{
     --navy:#1f3864; --blue:#2e74b5; --blue-2:#3b82c4; --light:#eaf0f8;
     --ink:#1c2530; --muted:#5b6675; --line:#d8e0ec; --bg:#f4f7fb; --card:#ffffff;
-    --good:#1a8f5a; --bad:#c0392b; --good-bg:#e6f6ee; --bad-bg:#fbecea;
+    --good:#1a8f5a; --bad:#c0392b; --amber:#e08a1e; --good-bg:#e6f6ee; --bad-bg:#fbecea;
     --shadow:0 1px 3px rgba(20,40,80,.08),0 8px 24px rgba(20,40,80,.06);
     --radius:14px;
   }
@@ -16,7 +16,7 @@
     :root{
       --navy:#9db9e8; --blue:#6aa4dc; --blue-2:#5b93cf; --light:#1b2740;
       --ink:#e9eef6; --muted:#9fb0c6; --line:#2a3a56; --bg:#0f1626; --card:#161f33;
-      --good:#4cc38a; --bad:#e57373; --good-bg:#16311f; --bad-bg:#3a1c1a;
+      --good:#4cc38a; --bad:#e57373; --amber:#e9a94a; --good-bg:#16311f; --bad-bg:#3a1c1a;
       --shadow:0 1px 3px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
     }
   }
@@ -30,7 +30,6 @@
   .wrap{max-width:1060px;margin:0 auto;padding:0 18px}
   header.top h1{margin:0;font-size:1.5rem;letter-spacing:.2px}
   header.top .sub{opacity:.85;font-size:.95rem;margin-top:4px}
-  header.top .subtitle-course{opacity:.7;font-size:.82rem;margin-top:2px}
   nav.papers{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
   nav.papers button{border:0;cursor:pointer;font:inherit;font-weight:600;padding:8px 13px;border-radius:999px;
     background:rgba(255,255,255,.14);color:#fff;transition:.15s;display:flex;align-items:center;gap:7px}
@@ -44,82 +43,126 @@
   .home-intro p{margin:.4rem 0;color:var(--ink)}
   .home-intro .sched{color:var(--muted);font-size:.9rem}
   .tips{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:9px}
-  .tips li{background:var(--light);border-radius:10px;padding:10px 13px;font-size:.92rem;
-    border-left:3px solid var(--blue)}
+  .tips li{background:var(--light);border-radius:10px;padding:10px 13px;font-size:.92rem;border-left:3px solid var(--blue)}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
   .pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 17px;
     box-shadow:var(--shadow);cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:8px;text-align:left}
   .pcard:hover{transform:translateY(-2px);border-color:var(--blue)}
   .pcard .row1{display:flex;align-items:center;gap:10px}
-  .badge{background:var(--navy);color:#fff;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;
-    font-weight:800;flex:0 0 auto}
-  .pcard .grp{margin-left:auto;font-size:.72rem;font-weight:700;color:var(--blue);background:var(--light);
-    padding:3px 9px;border-radius:999px}
+  .badge{background:var(--navy);color:#fff;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-weight:800;flex:0 0 auto}
+  .pcard .grp{margin-left:auto;font-size:.72rem;font-weight:700;color:var(--blue);background:var(--light);padding:3px 9px;border-radius:999px}
   .pcard h3{margin:0;font-size:1.02rem;line-height:1.3}
   .pcard .tagline{font-size:.8rem;color:var(--muted)}
-  /* paper detail */
   .paper-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:6px}
   .paper-head .badge{width:44px;height:44px;font-size:1.25rem;border-radius:11px}
   .paper-head h2{margin:0;font-size:1.32rem;line-height:1.25}
   .paper-head .tagline{color:var(--blue);font-weight:600;font-size:.85rem;margin-top:3px}
-  .paper-head .grp{margin-left:auto;font-size:.78rem;font-weight:700;color:#fff;background:var(--blue);
-    padding:5px 12px;border-radius:999px;white-space:nowrap}
-  .cite{font-size:.82rem;color:var(--muted);font-style:italic;margin:6px 0 16px;padding-left:12px;
-    border-left:3px solid var(--line)}
+  .paper-head .grp{margin-left:auto;font-size:.78rem;font-weight:700;color:#fff;background:var(--blue);padding:5px 12px;border-radius:999px;white-space:nowrap}
+  .cite{font-size:.82rem;color:var(--muted);font-style:italic;margin:6px 0 16px;padding-left:12px;border-left:3px solid var(--line)}
   .tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:2px solid var(--line);margin-bottom:18px}
-  .tabs button{border:0;background:none;font:inherit;font-weight:600;color:var(--muted);cursor:pointer;
-    padding:9px 14px;border-radius:8px 8px 0 0;position:relative;top:2px}
+  .tabs button{border:0;background:none;font:inherit;font-weight:600;color:var(--muted);cursor:pointer;padding:9px 14px;border-radius:8px 8px 0 0;position:relative;top:2px}
   .tabs button.active{color:var(--blue);border-bottom:3px solid var(--blue)}
   .tabs button:hover{color:var(--ink)}
   .panel{animation:fade .25s ease}
   @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
   .msg{background:var(--light);border-radius:12px;padding:15px 17px;margin-bottom:14px}
   .msg .lab{font-weight:700;color:var(--navy);display:block;margin-bottom:3px;font-size:.8rem;text-transform:uppercase;letter-spacing:.4px}
-  .primer{border:1px dashed var(--blue);border-radius:12px;padding:13px 16px;font-size:.9rem;background:transparent;color:var(--ink)}
+  .primer{border:1px dashed var(--blue);border-radius:12px;padding:13px 16px;font-size:.9rem;color:var(--ink)}
   /* walkthrough */
   .steps{display:flex;flex-direction:column;gap:0}
-  .step{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
-  .step:last-child{border-bottom:0}
-  .step .num{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;
-    display:grid;place-items:center;font-weight:700;font-size:.85rem}
-  .step .fig{font-weight:700;color:var(--navy)}
-  .step .figlab{color:var(--blue);font-weight:600;font-size:.86rem}
-  .step .txt{font-size:.92rem;color:var(--ink);margin-top:2px}
+  .stepc{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .stepc:last-child{border-bottom:0}
+  .stepc .num{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.85rem}
+  .stepc .fig{font-weight:700;color:var(--navy)}
+  .stepc .figlab{color:var(--blue);font-weight:600;font-size:.86rem}
+  .stepc .txt{font-size:.92rem;color:var(--ink);margin-top:2px}
+  .stepc .look{font-size:.84rem;color:var(--muted);margin-top:5px;background:var(--light);border-radius:8px;padding:6px 10px}
+  .stepc .look b{color:var(--amber)}
   /* flashcards */
   .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-  .flip{perspective:1000px;height:172px;cursor:pointer}
+  .flip{perspective:1000px;height:180px;cursor:pointer}
   .flip-in{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
   .flip.flipped .flip-in{transform:rotateY(180deg)}
-  .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;padding:15px;display:flex;
-    flex-direction:column;justify-content:center;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;padding:15px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow);border:1px solid var(--line)}
   .face.front{background:var(--navy);color:#fff}
   .face.front .term{font-weight:700;font-size:1.02rem}
   .face.front .hint{position:absolute;bottom:10px;right:13px;font-size:.7rem;opacity:.6}
   .face.back{background:var(--card);color:var(--ink);transform:rotateY(180deg);overflow:auto;font-size:.86rem}
   .face.back .term{font-weight:700;color:var(--blue);font-size:.82rem;margin-bottom:5px}
   /* quiz */
+  .quiz-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .qbar{flex:1;height:9px;background:var(--line);border-radius:99px;overflow:hidden}
+  .qbar > i{display:block;height:100%;width:0;background:var(--blue);transition:width .3s}
+  .qbar-label{font-size:.82rem;color:var(--muted);font-weight:600;white-space:nowrap}
   .q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;box-shadow:var(--shadow)}
   .q .qtext{font-weight:600;margin-bottom:11px}
-  .opt{display:block;width:100%;text-align:left;border:1.5px solid var(--line);background:transparent;color:var(--ink);
-    font:inherit;padding:10px 13px;border-radius:9px;margin-bottom:8px;cursor:pointer;transition:.12s}
+  .opt{display:block;width:100%;text-align:left;border:1.5px solid var(--line);background:transparent;color:var(--ink);font:inherit;padding:10px 13px;border-radius:9px;margin-bottom:8px;cursor:pointer;transition:.12s}
   .opt:hover{border-color:var(--blue)}
   .opt.correct{background:var(--good-bg);border-color:var(--good);color:var(--good)}
   .opt.wrong{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
   .opt:disabled{cursor:default}
   .explain{font-size:.86rem;margin-top:4px;padding:10px 13px;border-radius:9px;background:var(--light);display:none}
   .explain.show{display:block}
-  .quiz-score{font-weight:700;color:var(--navy);margin-top:6px}
+  .quiz-done{background:var(--navy);color:#fff;border-radius:12px;padding:18px 20px;text-align:center;margin-top:6px;display:none}
+  .quiz-done.show{display:block;animation:fade .3s ease}
+  .quiz-done .big{font-size:1.6rem;font-weight:800}
+  .retry{margin-top:12px;background:#fff;color:var(--navy);border:0;font:inherit;font-weight:700;padding:9px 18px;border-radius:999px;cursor:pointer}
   .aside-box{border-left:3px solid var(--muted);padding:8px 14px;color:var(--muted);font-size:.88rem;background:var(--light);border-radius:0 10px 10px 0;margin-top:6px}
   h4.sec{color:var(--navy);margin:4px 0 10px;font-size:.95rem;text-transform:uppercase;letter-spacing:.5px}
   /* glossary */
-  .search{width:100%;padding:11px 15px;border:1.5px solid var(--line);border-radius:10px;font:inherit;
-    background:var(--card);color:var(--ink);margin-bottom:16px}
+  .search{width:100%;padding:11px 15px;border:1.5px solid var(--line);border-radius:10px;font:inherit;background:var(--card);color:var(--ink);margin-bottom:16px}
   .gitem{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:13px 16px;margin-bottom:10px}
   .gitem .gt{font-weight:700;color:var(--blue)}
   .gitem .gp{font-size:.72rem;color:var(--muted);margin-left:8px;font-weight:600}
   .gitem .gd{font-size:.9rem;margin-top:3px}
   footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:.82rem;text-align:center}
   .back-btn{background:none;border:0;color:var(--blue);font:inherit;font-weight:600;cursor:pointer;padding:6px 0;margin-bottom:8px}
+  /* ===== VISUALIZE ENGINE ===== */
+  .viz-wrap{}
+  .viz-stage{background:#f7fafc;border:1px solid var(--line);border-radius:14px;padding:6px;overflow:hidden}
+  @media (prefers-color-scheme: dark){.viz-stage{background:#0e1830;border-color:#243452}}
+  .vzsvg{width:100%;height:auto;display:block}
+  .vznode .bx{fill:#eef2f8;stroke:#94a3b8;stroke-width:1.5;transition:.3s}
+  .vznode .lbl{fill:#1c2530;font:600 13px -apple-system,'Segoe UI',sans-serif;transition:.3s}
+  .vznode.t-enzyme .bx{fill:#dcebff;stroke:#2e74b5}
+  .vznode.t-product .bx{fill:#e2f6ec;stroke:#1a8f5a}
+  .vznode.t-organ  .bx{fill:#fdeecf;stroke:#d98a2b}
+  .vznode.t-bad    .bx{fill:#fbe3e0;stroke:#c0392b}
+  @media (prefers-color-scheme: dark){
+    .vznode .bx{fill:#1c2b44;stroke:#3f5578}
+    .vznode .lbl{fill:#e9eef6}
+    .vznode.t-enzyme .bx{fill:#173154;stroke:#4f8fd0}
+    .vznode.t-product .bx{fill:#123626;stroke:#3ba676}
+    .vznode.t-organ  .bx{fill:#3a2c12;stroke:#c98a35}
+    .vznode.t-bad    .bx{fill:#3a1b18;stroke:#c85a4e}
+  }
+  .vznode{cursor:default}
+  .vznode.lit .bx{stroke-width:3.4;filter:drop-shadow(0 0 6px rgba(224,138,30,.6))}
+  .vznode.lit .bx.pulse{animation:vzpulse 1.4s ease-in-out infinite}
+  @keyframes vzpulse{0%,100%{filter:drop-shadow(0 0 3px rgba(224,138,30,.35))}50%{filter:drop-shadow(0 0 9px rgba(224,138,30,.75))}}
+  .vznode.dim{opacity:.22}
+  .vzedge{stroke:#7c8aa0;stroke-width:2;fill:none;transition:.3s}
+  .vzedge.dash{stroke-dasharray:5 5}
+  .vzedge.dim{opacity:.12}
+  .vzdot{transition:.3s}
+  .vzdot.flow{fill:#2e74b5}
+  .vzdot.nad{fill:#e08a1e}
+  .vzdot.good{fill:#1a8f5a}
+  .vzdot.bad{fill:#c0392b}
+  .vzdot.dim{opacity:0}
+  .viz-controls{display:flex;align-items:center;gap:10px;margin:14px 0 10px;flex-wrap:wrap}
+  .viz-controls button{border:0;background:var(--blue);color:#fff;font:inherit;font-weight:700;padding:8px 15px;border-radius:999px;cursor:pointer}
+  .viz-controls button.ghost{background:var(--light);color:var(--navy)}
+  .viz-controls button:disabled{opacity:.4;cursor:default}
+  .viz-dots{display:flex;gap:6px;margin-left:auto}
+  .viz-dots i{width:9px;height:9px;border-radius:50%;background:var(--line);cursor:pointer}
+  .viz-dots i.on{background:var(--blue)}
+  .viz-cap{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:0 10px 10px 0;padding:12px 15px;font-weight:600;min-height:20px}
+  .viz-cap .cnum{color:var(--blue);font-weight:800;margin-right:8px}
+  .viz-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:.82rem;color:var(--muted)}
+  .viz-legend span{display:inline-flex;align-items:center;gap:6px}
+  .viz-legend b{width:11px;height:11px;border-radius:50%;display:inline-block}
+  .lg-flow{background:#2e74b5}.lg-nad{background:#e08a1e}.lg-good{background:#1a8f5a}.lg-bad{background:#c0392b}
   .hidden{display:none!important}
 </style>
 </head>
@@ -128,7 +171,6 @@
   <div class="wrap">
     <h1 id="site-title">Journal Presentation — Study Guide</h1>
     <div class="sub" id="site-sub"></div>
-    <div class="subtitle-course" id="site-course"></div>
     <nav class="papers" id="paper-nav"></nav>
   </div>
 </header>
@@ -136,7 +178,7 @@
   <div class="wrap" id="view"></div>
 </main>
 <footer>
-  <div class="wrap">Study guide for VET67-206 General Biochemistry · built for the Week-15 journal presentation. Tap a paper to explore its brief, figures, flashcards, and quiz.</div>
+  <div class="wrap">Study guide for VET67-206 General Biochemistry · Week-15 journal presentation. Overview, animated visualizations, figure walkthroughs, flashcards, and quizzes for each paper. Diagrams are original teaching illustrations, not reproductions of the papers' figures.</div>
 </footer>
 
 <script>
@@ -150,23 +192,27 @@ window.PAPERS = [
     message: "How an athlete paces a short, intense effort changes which energy-producing pathways the muscle relies on — even when the total work is identical. This paper shows glycolysis, glycogen breakdown, and the TCA cycle from class operating in working muscle.",
     primer: "Method primer: metabolomics measures the levels of many small molecules (sugars, amino acids, lipids, their derivatives) in muscle or blood at once, usually by mass spectrometry. Here it captures a snapshot of glycolytic and TCA-cycle intermediates during exercise.",
     figures: [
-      { fig: "Figure 1", label: "Experimental design", text: "Positive pacing (fast then slower) vs. negative pacing (slower then fast). Same total work, different order." },
-      { fig: "Figure 2D", label: "Plasma lactate", text: "Higher during positive pacing. Touch 2A–C (heart rate, O₂ uptake, a–v O₂ difference) only briefly." },
-      { fig: "Figure 3", label: "Muscle glycogen", text: "Significantly lower at 1 and 2 min during positive pacing — the fuel store is drawn down faster." },
-      { fig: "Figure 5", label: "Significant metabolites", text: "Focus on lactate and glycerol 3-phosphate, both higher at 1 min during positive pacing." },
-      { fig: "Figure 6", label: "Summed intermediates", text: "Glycolytic (upper/lower/total) and TCA-cycle (span I/II/total) intermediates — the metabolomics core." }
+      { fig: "Figure 1", label: "Experimental design", text: "Positive pacing (fast then slower) vs. negative pacing (slower then fast). Same total work, different order.", look: "Point out that both trials do identical total work — the only variable is the ORDER of intensity." },
+      { fig: "Figure 2D", label: "Plasma lactate", text: "Higher during positive pacing. Touch 2A–C (heart rate, O₂ uptake, a–v O₂ difference) only briefly.", look: "Look for the gap opening between the two curves toward 2 min — lactate climbs higher in positive pacing." },
+      { fig: "Figure 3", label: "Muscle glycogen", text: "Significantly lower at 1 and 2 min during positive pacing — the fuel store is drawn down faster.", look: "Compare the two bars at 1 and 2 min: positive pacing has emptied more of the glycogen tank." },
+      { fig: "Figure 5", label: "Significant metabolites", text: "Focus on lactate and glycerol 3-phosphate, both higher at 1 min during positive pacing.", look: "Both are NAD⁺-regenerating end products — that's your link to redox balance." },
+      { fig: "Figure 6", label: "Summed intermediates", text: "Glycolytic (upper/lower/total) and TCA-cycle (span I/II/total) intermediates — the metabolomics core.", look: "Show that glycolytic intermediates rise most in the fast phase; TCA intermediates rise early then plateau." }
     ],
     concepts: [
-      { term: "Phosphofructokinase (PFK)", def: "The committed, rate-limiting step of glycolysis. Fructose-1,6-bisphosphate it makes is an allosteric activator of pyruvate kinase." },
-      { term: "NAD⁺ regeneration", def: "GAPDH needs NAD⁺. Making lactate and glycerol 3-phosphate regenerates NAD⁺ so glycolysis can keep making ATP — the redox centerpiece." },
-      { term: "Muscle glycogen", def: "The stored fuel; glycogenolysis feeds glucose units into glycolysis during intense exercise." },
+      { term: "Phosphofructokinase (PFK)", def: "The committed, rate-limiting step of glycolysis. The fructose-1,6-bisphosphate it makes is an allosteric activator of pyruvate kinase (feed-forward)." },
+      { term: "NAD⁺ regeneration", def: "GAPDH needs NAD⁺. Making lactate and glycerol 3-phosphate regenerates NAD⁺ so glycolysis can keep making ATP — the redox centerpiece of this paper." },
+      { term: "Upper vs lower glycolysis", def: "Upper = glucose → fructose-1,6-bisphosphate (invests ATP). Lower = triose phosphates → pyruvate (pays out ATP + NADH)." },
+      { term: "Muscle glycogen", def: "The stored fuel; glycogen phosphorylase releases glucose-1-phosphate, feeding glycolysis during intense exercise." },
+      { term: "Glycerol 3-phosphate", def: "Made by reducing DHAP with NADH — an alternative way to reoxidize NADH to NAD⁺ under high glycolytic flux." },
       { term: "Anaplerosis", def: "Refilling TCA-cycle intermediates — e.g. alanine aminotransferase: pyruvate + glutamate → 2-oxoglutarate + alanine." },
-      { term: "Lactate", def: "Both a product of anaerobic glycolysis and a fuel that can be oxidized; its level indexes glycolytic flux." }
+      { term: "Lactate", def: "Both a product of anaerobic glycolysis and a fuel that can be oxidized; its blood level indexes glycolytic flux and exercise intensity." }
     ],
     quiz: [
       { q: "Why does making lactate let glycolysis keep producing ATP?", options: ["It provides oxygen to the mitochondria", "It regenerates NAD⁺ needed by GAPDH", "It activates phosphofructokinase directly", "It breaks down glycogen"], answer: 1, explain: "Lactate dehydrogenase reoxidizes NADH to NAD⁺, which GAPDH requires to continue glycolysis anaerobically." },
       { q: "In positive pacing, muscle glycogen was...", options: ["Unchanged vs. negative pacing", "Higher at 1–2 min", "Significantly lower at 1–2 min", "Only measured after exercise"], answer: 2, explain: "Positive pacing drew down the glycogen store faster — significantly lower at 1 and 2 min." },
-      { q: "Which enzyme is the committed, rate-limiting step of glycolysis?", options: ["Hexokinase", "Pyruvate kinase", "Phosphofructokinase", "Lactate dehydrogenase"], answer: 2, explain: "PFK catalyzes the committed step and is the main regulatory valve of glycolysis." }
+      { q: "Which enzyme is the committed, rate-limiting step of glycolysis?", options: ["Hexokinase", "Pyruvate kinase", "Phosphofructokinase", "Lactate dehydrogenase"], answer: 2, explain: "PFK catalyzes the committed step and is the main regulatory valve of glycolysis." },
+      { q: "Besides lactate, which metabolite rose at 1 min in positive pacing and also regenerates NAD⁺?", options: ["Citrate", "Glycerol 3-phosphate", "Palmitate", "Urea"], answer: 1, explain: "Reducing DHAP to glycerol 3-phosphate consumes NADH and regenerates NAD⁺ — a second redox outlet." },
+      { q: "The key take-home about identical total work is that...", options: ["Pacing order doesn't matter", "The ORDER of intensity changes which pathways dominate", "Only heart rate differs", "Fat oxidation dominates both"], answer: 1, explain: "Same total work, different order: positive pacing shifts reliance toward glycolytic metabolism." }
     ],
     setAside: "Figure 4 (PCA / heat map) — one line only. Sports-science pacing literature — motivation only. Statistics (FDR, ANOVA) — skip."
   },
@@ -178,24 +224,28 @@ window.PAPERS = [
     message: "Muscle mitochondria constantly reshape — splitting (fission) and merging (fusion) — and the trigger is the cell's energy state. A computer model shows sprint, resistance, and endurance send different energy/stress signals, so they remodel mitochondria differently.",
     primer: "Method primer: this is a computational (simulation) paper — no new wet-lab data. The authors wrote equations for how signals and energy change over time, then 'ran' each exercise type and read out the predictions.",
     figures: [
-      { fig: "Figure 1", label: "The model map", text: "Network diagram: exercise → energy/ROS signals → fission and fusion machinery. Orient the audience to 'what feeds what.'" },
-      { fig: "Figure 2", label: "Does it work?", text: "One line: the model reproduced known biology ~80% of the time (validation). This is why we trust the predictions." },
-      { fig: "Figure 3", label: "Cytosolic signals", text: "How energy-stress signals rise/fall for sprint vs. resistance vs. endurance." },
-      { fig: "Figure 4", label: "Key mediators", text: "Focus on AMPK, PGC-1α, and ROS — the biochemistry-class molecules. Endurance drives the largest, most sustained response." },
-      { fig: "Figure 5", label: "The payoff", text: "Early DRP1-driven fission during exercise, then MFN1/2–OPA1 re-fusion as stress fades — 'triage, then rebuild.'" },
-      { fig: "Figure 6", label: "Which signals matter", text: "Lightly: AMPK→fusion and ROS/AMPK→fission are the dominant switches." }
+      { fig: "Figure 1", label: "The model map", text: "Network diagram: exercise → energy/ROS signals → fission and fusion machinery. Orient the audience to 'what feeds what.'", look: "Don't read every arrow — trace one path: exercise → AMPK → fusion." },
+      { fig: "Figure 2", label: "Does it work?", text: "One line: the model reproduced known biology ~80% of the time (validation). This is why we trust the predictions.", look: "Frame validation as 'we checked the model against real experiments before trusting it.'" },
+      { fig: "Figure 3", label: "Cytosolic signals", text: "How energy-stress signals rise/fall for sprint vs. resistance vs. endurance.", look: "Note similar-looking effort can produce different internal signal shapes." },
+      { fig: "Figure 4", label: "Key mediators", text: "Focus on AMPK, PGC-1α, and ROS — the biochemistry-class molecules. Endurance drives the largest, most sustained response.", look: "Endurance = tallest, longest-lasting AMPK/ROS curve." },
+      { fig: "Figure 5", label: "The payoff", text: "Early DRP1-driven fission during exercise, then MFN1/2–OPA1 re-fusion as stress fades — 'triage, then rebuild.'", look: "Two phases: fission spikes during effort, fusion recovers afterward." },
+      { fig: "Figure 6", label: "Which signals matter", text: "Lightly: AMPK→fusion and ROS/AMPK→fission are the dominant switches.", look: "Present as a ranked conclusion, not the algorithm." }
     ],
     concepts: [
       { term: "Energy charge / AMP:ATP", def: "When ATP falls and AMP rises during exercise, the cell 'knows' it is short on energy — a bioenergetics signal." },
       { term: "AMPK", def: "The cellular fuel gauge kinase, activated by low energy charge; master switch for both fission and fusion, and it drives PGC-1α." },
-      { term: "Fission vs. fusion", def: "Fission (DRP1) isolates damaged mitochondrial parts; fusion (MFN1/2, OPA1) mixes contents to dilute damage." },
+      { term: "Fission (DRP1)", def: "Dynamin-related protein 1 pinches a mitochondrion in two — isolating damaged segments for quality control." },
+      { term: "Fusion (MFN1/2, OPA1)", def: "Mitofusins fuse outer membranes and OPA1 fuses inner membranes — mixing contents to dilute damage and share resources." },
       { term: "Reactive oxygen species (ROS)", def: "By-product of the electron transport chain that doubles as a signal — the redox side of bioenergetics and a primary fission trigger." },
-      { term: "PGC-1α", def: "The endurance-training coactivator that drives mitochondrial biogenesis (building new mitochondria)." }
+      { term: "PGC-1α", def: "The endurance-training coactivator that drives mitochondrial biogenesis (building new mitochondria)." },
+      { term: "Triage-then-rebuild", def: "The predicted cycle: acute fission during effort segregates damage, then fusion rebuilds a healthy network during recovery." }
     ],
     quiz: [
       { q: "What activates AMPK during exercise?", options: ["A rise in ATP", "A rise in the AMP:ATP ratio (low energy charge)", "High blood glucose", "Fusion of mitochondria"], answer: 1, explain: "AMPK senses energy stress — a rising AMP:ATP ratio signals the cell is low on ATP." },
-      { q: "In the model, which exercise type produced the strongest, most sustained mitochondrial remodelling?", options: ["Resistance", "Sprint", "Endurance", "All equal"], answer: 2, explain: "Endurance drove the largest and most sustained AMPK/ROS response and remodelling; sprint was sharp but brief, resistance minimal." },
-      { q: "What is the role of DRP1 in the 'triage, then rebuild' cycle?", options: ["Drives re-fusion after exercise", "Builds new mitochondria", "Drives acute fission during exercise", "Senses calcium"], answer: 2, explain: "DRP1 drives the acute fission during exercise; MFN1/2–OPA1 then mediate re-fusion as energy stress declines." }
+      { q: "Which exercise type produced the strongest, most sustained remodelling?", options: ["Resistance", "Sprint", "Endurance", "All equal"], answer: 2, explain: "Endurance drove the largest, most sustained AMPK/ROS response; sprint was sharp but brief, resistance minimal." },
+      { q: "What is DRP1's role in the cycle?", options: ["Drives re-fusion after exercise", "Builds new mitochondria", "Drives acute fission during exercise", "Senses calcium only"], answer: 2, explain: "DRP1 drives acute fission during exercise; MFN1/2–OPA1 then mediate re-fusion as stress declines." },
+      { q: "Which proteins carry out fusion?", options: ["DRP1 and FIS1", "MFN1/2 and OPA1", "AMPK and PGC-1α", "GAPDH and LDH"], answer: 1, explain: "Mitofusins (MFN1/2) fuse outer membranes; OPA1 fuses inner membranes." },
+      { q: "Why does the paper have 'no new wet-lab data'?", options: ["It was retracted", "It is a computational simulation validated against known biology", "It only used human blood", "It is a review"], answer: 1, explain: "It's a systems model — equations run for each exercise type, checked (~80%) against real experiments." }
     ],
     setAside: "The math (differential equations, parameter fitting). Sensitivity-analysis internals — conclusion only. Training-prescription discussion — one sentence. Full kinase catalogue (ERK, LKB1, mTOR, PKA) — name AMPK as the star."
   },
@@ -207,21 +257,26 @@ window.PAPERS = [
     message: "The gut makes a hormone, GLP-1, that signals the pancreas to release insulin and keep blood glucose in check. This paper shows how GLP-1 is produced and why losing it worsens diabetes in obesity.",
     primer: "Method primer: mouse knockouts remove a gene in specific cells to test what it does; an oral/IP glucose tolerance test measures how fast the body clears a glucose load. GLP-1 and insulin are measured in blood.",
     figures: [
-      { fig: "Figure 1a–c", label: "The hook", text: "High-fat-diet obese mice have lower gut GLP-1 and lower IL-22, and the two track together." },
-      { fig: "Figure 4a–e", label: "Mechanism core", text: "IL-22 raises GLP-1 dose-dependently (4a–b); blocking calcium lowers it (4c); a STAT3 inhibitor blocks it (4d); STAT3 binds the Gcg promoter (4e)." },
-      { fig: "Figure 2b–d", label: "Functional payoff", text: "Knocking out the receptor in gut cells worsens glucose tolerance and lowers GLP-1 and insulin. Keep to a couple of panels." },
-      { fig: "Figure 6a, 6k–l", label: "Cause and effect", text: "IL-22 raises GLP-1 and improves tolerance (6a); a GLP-1 receptor blocker (exendin-9-39) abolishes the benefit (6k–l)." }
+      { fig: "Figure 1a–c", label: "The hook", text: "High-fat-diet obese mice have lower gut GLP-1 and lower IL-22, and the two track together.", look: "Two lines falling together sets up 'are they connected?'" },
+      { fig: "Figure 4a–e", label: "Mechanism core", text: "IL-22 raises GLP-1 dose-dependently (4a–b); blocking calcium lowers it (4c); a STAT3 inhibitor blocks it (4d); STAT3 binds the Gcg promoter (4e).", look: "This is your money slide: signal → calcium → STAT3 → Gcg gene → GLP-1." },
+      { fig: "Figure 2b–d", label: "Functional payoff", text: "Knocking out the receptor in gut cells worsens glucose tolerance and lowers GLP-1 and insulin. Keep to a couple of panels.", look: "No receptor → worse glucose clearance: proves the pathway matters in vivo." },
+      { fig: "Figure 6a, 6k–l", label: "Cause and effect", text: "IL-22 raises GLP-1 and improves tolerance (6a); a GLP-1 receptor blocker (exendin-9-39) abolishes the benefit (6k–l).", look: "Block the receptor and the benefit vanishes — the clean causal test." }
     ],
     concepts: [
-      { term: "GLP-1 (incretin)", def: "A gut hormone that stimulates insulin secretion and lowers blood glucose — central carbohydrate-metabolism regulation." },
+      { term: "GLP-1 (incretin)", def: "A gut hormone released after eating that stimulates insulin secretion and lowers blood glucose — central carbohydrate-metabolism regulation." },
       { term: "Prohormone processing", def: "The Gcg gene makes preproglucagon; prohormone convertase 1/3 cleaves it into GLP-1 — proteolytic processing of a prohormone." },
+      { term: "STAT3 transcription factor", def: "IL-22 activates STAT3, which binds the Gcg promoter to switch on GLP-1 production — signal-to-gene coupling." },
       { term: "L-cell nutrient sensing", def: "Short-chain fatty acids (butyrate) from gut microbes act via GPCRs (FFAR2/GPR43) and calcium signaling to stimulate GLP-1." },
+      { term: "Incretin effect", def: "Oral glucose triggers more insulin than IV glucose because gut incretins (GLP-1, GIP) amplify the pancreatic response." },
+      { term: "Exendin-9-39", def: "A GLP-1 receptor antagonist — used here to prove the benefit runs specifically through GLP-1." },
       { term: "GLP-1 receptor agonists", def: "The exendin-4 / semaglutide drug family used clinically for type 2 diabetes and obesity." }
     ],
     quiz: [
       { q: "How does GLP-1 lower blood glucose?", options: ["By breaking down glucose in the gut", "By stimulating insulin secretion from the pancreas", "By blocking glucose absorption", "By making glycogen in muscle"], answer: 1, explain: "GLP-1 is an incretin — it signals the pancreas to release insulin in response to a meal." },
       { q: "Which gene is cleaved to make GLP-1, and by what?", options: ["Insulin gene, by trypsin", "Gcg (preproglucagon), by prohormone convertase 1/3", "Gcg, by pepsin", "GLUT4 gene, by STAT3"], answer: 1, explain: "Preproglucagon from the Gcg gene is cleaved by prohormone convertase 1/3 into GLP-1." },
-      { q: "Blocking the GLP-1 receptor with exendin-9-39 did what to IL-22's benefit?", options: ["Enhanced it", "Had no effect", "Abolished it", "Only affected insulin"], answer: 2, explain: "The benefit disappeared — proving IL-22 works through GLP-1." }
+      { q: "IL-22 turns on GLP-1 production through which transcription factor?", options: ["p53", "STAT3", "HNF4A", "FoxO3a"], answer: 1, explain: "IL-22 activates STAT3, which binds the Gcg promoter to drive GLP-1." },
+      { q: "Blocking the GLP-1 receptor with exendin-9-39 did what to IL-22's benefit?", options: ["Enhanced it", "Had no effect", "Abolished it", "Only affected insulin"], answer: 2, explain: "The benefit disappeared — proving IL-22 works through GLP-1." },
+      { q: "Which microbial metabolite boosted IL-22 and GLP-1?", options: ["Ethanol", "Butyrate (a short-chain fatty acid)", "Lactate", "Ammonia"], answer: 1, explain: "Butyrate raised IL-22 and enhanced GLP-1 in an IL-22R–dependent way, linking microbes to hormone release." }
     ],
     setAside: "Immunology machinery (IL-22/IL-10, ILCs, flow cytometry) — 'IL-22 is the immune signal that raises GLP-1.' Conditional-knockout genetics. Sequencing/-omics (16S, RNAseq, GC-MS)."
   },
@@ -233,16 +288,18 @@ window.PAPERS = [
     message: "Not all sugar is handled the same way. In a controlled 2-week human trial, the fructose part mainly worsened the liver's response to insulin, while the glucose part mainly worsened muscle's response. 'Sugar' is really two molecules with two fates.",
     primer: "Method primer: an OGTT (oral glucose tolerance test) means drinking glucose, then measuring blood glucose and insulin over hours. An 'insulin sensitivity index' is a number summarizing how well insulin lowers glucose (some estimate the liver, some the muscle).",
     figures: [
-      { fig: "Table 1", label: "The design", text: "Young adults drank fructose-, glucose-, HFCS-, sucrose-, or aspartame-sweetened beverages for 2 weeks, OGTT before and after. Groups comparable at baseline." },
-      { fig: "Figure 2", label: "OGTT curves", text: "Mean glucose and insulin responses before (Week 0) and after (Week 2). Walk through how to read one curve." },
-      { fig: "Figure 3", label: "The liver signal", text: "Fasting glucose, insulin, HOMA-IR, hepatic IRI. Fructose worsened these hepatic measures; glucose did not." },
-      { fig: "Figure 4", label: "OGTT totals", text: "Change in 3-hour glucose and insulin AUC — overall glucose handling by each sugar." },
-      { fig: "Figure 5", label: "The muscle signal", text: "Matsuda, Predicted M, Stumvoll indices. Glucose looked worse than fructose here — the mirror image of Figure 3." },
-      { fig: "Table 3", label: "The punchline", text: "Relative contribution of fructose vs. glucose: fructose hits the liver, glucose hits the muscle." }
+      { fig: "Table 1", label: "The design", text: "Young adults drank fructose-, glucose-, HFCS-, sucrose-, or aspartame-sweetened beverages for 2 weeks, OGTT before and after. Groups comparable at baseline.", look: "Aspartame is the no-sugar control." },
+      { fig: "Figure 2", label: "OGTT curves", text: "Mean glucose and insulin responses before (Week 0) and after (Week 2). Walk through how to read one curve.", look: "A higher/longer insulin curve for the same glucose = more insulin resistance." },
+      { fig: "Figure 3", label: "The liver signal", text: "Fasting glucose, insulin, HOMA-IR, hepatic IRI. Fructose worsened these hepatic measures; glucose did not.", look: "Fructose bars move in the 'worse' direction for the liver indices." },
+      { fig: "Figure 4", label: "OGTT totals", text: "Change in 3-hour glucose and insulin AUC — overall glucose handling by each sugar.", look: "Compare area-under-curve shifts between sugars." },
+      { fig: "Figure 5", label: "The muscle signal", text: "Matsuda, Predicted M, Stumvoll indices. Glucose looked worse than fructose here — the mirror image of Figure 3.", look: "Now glucose is the bigger offender — opposite of Figure 3." },
+      { fig: "Table 3", label: "The punchline", text: "Relative contribution of fructose vs. glucose: fructose hits the liver, glucose hits the muscle.", look: "One table that states the whole thesis." }
     ],
     concepts: [
       { term: "Fructose metabolism", def: "Fructose is phosphorylated by fructokinase (ketohexokinase), bypassing the PFK control step of glycolysis — carbon floods in unregulated and feeds de novo lipogenesis. Explains its liver effect." },
-      { term: "Glucose metabolism", def: "Glucose uptake (GLUT4 in muscle), hexokinase, and the regulated PFK valve — contrast with fructose. Loads the muscle." },
+      { term: "Bypassing PFK", def: "PFK is the regulated valve of glycolysis; fructolysis enters below it, so fructose is not slowed by the cell's energy status." },
+      { term: "De novo lipogenesis", def: "Excess fructose-derived carbon is built into new fat in the liver — the route to hepatic insulin resistance." },
+      { term: "Glucose metabolism", def: "Glucose uptake (GLUT4 in muscle), hexokinase, and the regulated PFK valve — contrast with fructose. Glucose loads the muscle." },
       { term: "Insulin resistance", def: "When liver and muscle fail to respond to insulin (drive uptake, switch on storage). Core carbohydrate-metabolism regulation." },
       { term: "HFCS & sucrose as mixtures", def: "Sucrose = glucose + fructose (split by sucrase); HFCS ≈ a glucose/fructose mix. Effects fall between the pure sugars." },
       { term: "Aspartame (control)", def: "A non-caloric sweetener not metabolized as a sugar — sweetness without the carbohydrate load." }
@@ -250,7 +307,9 @@ window.PAPERS = [
     quiz: [
       { q: "Why does fructose especially affect the liver?", options: ["It is stored as muscle glycogen", "Fructokinase bypasses the PFK control step, feeding de novo lipogenesis", "It cannot be metabolized at all", "It directly blocks insulin receptors"], answer: 1, explain: "Fructose skips the regulated PFK valve, so carbon floods into lipogenesis in the liver." },
       { q: "In this study, the glucose component most negatively affected...", options: ["Hepatic insulin sensitivity", "Muscle insulin sensitivity", "Neither", "Both equally"], answer: 1, explain: "Glucose (and the glucose component of mixed sugars) worsened muscle insulin sensitivity more than fructose did." },
-      { q: "Why was aspartame included?", options: ["It is the sweetest sugar", "As a non-caloric control not metabolized as sugar", "To add fructose", "To measure the liver only"], answer: 1, explain: "Aspartame provides sweetness without a carbohydrate load — a control condition." }
+      { q: "Why was aspartame included?", options: ["It is the sweetest sugar", "As a non-caloric control not metabolized as sugar", "To add fructose", "To measure the liver only"], answer: 1, explain: "Aspartame provides sweetness without a carbohydrate load — a control condition." },
+      { q: "Sucrose is best described as...", options: ["Pure fructose", "Pure glucose", "Glucose + fructose (a disaccharide)", "A protein"], answer: 2, explain: "Sucrose is glucose + fructose, split by sucrase — so its effects fall between the two pure sugars." },
+      { q: "The paper's central thesis is that...", options: ["All sugars are identical", "Fructose harms the liver while glucose harms the muscle", "Only calories matter", "Aspartame is dangerous"], answer: 1, explain: "The two monosaccharides act on different tissues — a 'sugar is two molecules' message." }
     ],
     setAside: "The index formulas (HOMA-IR, Matsuda, etc.) — name what each estimates. Statistical modelling behind Table 3 — conclusions only. Recruitment/dropout logistics — one sentence."
   },
@@ -262,21 +321,26 @@ window.PAPERS = [
     message: "The liver controls the body's cholesterol balance and the lipoproteins that carry it. This paper shows what happens to those lipoproteins — and to cardiovascular risk — when one liver regulator is lost, in a sex-specific way.",
     primer: "Method primer: knocking out a gene only in liver cells tests its job there; lipoprotein profiling separates VLDL/LDL/HDL and measures their cholesterol. Atherosclerosis is scored as plaque in the aortic root.",
     figures: [
-      { fig: "Figure 1e–h", label: "Core phenotype", text: "Losing KDM6A in the liver raises VLDL cholesterol and lowers HDL cholesterol (pro-atherogenic), without changing triglycerides — only in females." },
-      { fig: "Figure 1l–m, 1q", label: "Cholesterol & bile acids", text: "Intrahepatic cholesterol rises while liver triglyceride falls; bile-acid synthesis genes (Cyp7a1, Cyp8b1) drop." },
-      { fig: "Figure 1r–t", label: "Clinical payoff", text: "More atherosclerosis (aortic-root plaque) in female knockouts, but not males." },
-      { fig: "Figure 5k", label: "Summary model", text: "One schematic telling the whole upstream-to-outcome story; mention the epigenetic switch briefly here." }
+      { fig: "Figure 1e–h", label: "Core phenotype", text: "Losing KDM6A in the liver raises VLDL cholesterol and lowers HDL cholesterol (pro-atherogenic), without changing triglycerides — only in females.", look: "VLDL up + HDL down, and note it's female-specific." },
+      { fig: "Figure 1l–m, 1q", label: "Cholesterol & bile acids", text: "Intrahepatic cholesterol rises while liver triglyceride falls; bile-acid synthesis genes (Cyp7a1, Cyp8b1) drop.", look: "Less bile-acid synthesis = cholesterol backs up in the liver." },
+      { fig: "Figure 1r–t", label: "Clinical payoff", text: "More atherosclerosis (aortic-root plaque) in female knockouts, but not males.", look: "The lipid changes translate into real plaque." },
+      { fig: "Figure 5k", label: "Summary model", text: "One schematic telling the whole upstream-to-outcome story; mention the epigenetic switch briefly here.", look: "Use this single diagram to tie regulator → genes → lipoproteins → disease." }
     ],
     concepts: [
       { term: "Lipoprotein classes", def: "VLDL, LDL, HDL differ in cholesterol vs. triglyceride cargo. High VLDL/LDL with low HDL is 'pro-atherogenic.'" },
       { term: "Apolipoproteins", def: "The protein parts of lipoproteins. APOA1 in HDL drives reverse cholesterol transport via ABCA1/ABCG1 transporters." },
+      { term: "Reverse cholesterol transport", def: "HDL collects excess cholesterol from tissues and returns it to the liver — the 'good cholesterol' function." },
       { term: "Cholesterol homeostasis", def: "Liver balances uptake, synthesis, and clearance; conversion to bile acids is the main excretion route." },
-      { term: "Nuclear-receptor regulators", def: "LXR (senses oxysterols) and FXR (senses bile acids) control cholesterol and bile-acid genes — linking lipid sensing to gene expression." }
+      { term: "Bile-acid synthesis (Cyp7a1)", def: "The rate-limiting enzyme turning cholesterol into bile acids — the liver's chief way to get rid of cholesterol." },
+      { term: "Nuclear-receptor regulators", def: "LXR (senses oxysterols) and FXR (senses bile acids) control cholesterol and bile-acid genes — linking lipid sensing to gene expression." },
+      { term: "Pro-atherogenic profile", def: "High cholesterol-carrying VLDL/LDL plus low protective HDL — the blood pattern that builds arterial plaque." }
     ],
     quiz: [
       { q: "Which lipoprotein profile is 'pro-atherogenic'?", options: ["Low VLDL, high HDL", "High VLDL/LDL, low HDL", "High HDL, low LDL", "No triglycerides"], answer: 1, explain: "High cholesterol-carrying VLDL/LDL with low protective HDL promotes atherosclerosis." },
       { q: "What is the main route for the liver to excrete cholesterol?", options: ["Exhaling it", "Conversion to bile acids", "Storing it as glycogen", "Converting it to glucose"], answer: 1, explain: "Cholesterol is converted to bile acids (via Cyp7a1 etc.) — the principal excretion route." },
-      { q: "APOA1 drives which process?", options: ["Fatty-acid synthesis", "Reverse cholesterol transport (via ABCA1/ABCG1)", "Glucose uptake", "Bile-acid sensing"], answer: 1, explain: "APOA1 (the main HDL protein) accepts cholesterol via ABCA1/ABCG1 for reverse transport back to the liver." }
+      { q: "APOA1 drives which process?", options: ["Fatty-acid synthesis", "Reverse cholesterol transport (via ABCA1/ABCG1)", "Glucose uptake", "Bile-acid sensing"], answer: 1, explain: "APOA1 (the main HDL protein) accepts cholesterol via ABCA1/ABCG1 for reverse transport back to the liver." },
+      { q: "The KDM6A knockout effect was notable for being...", options: ["Identical in both sexes", "Female-specific", "Only in males", "Only in newborns"], answer: 1, explain: "The pro-atherogenic profile and plaque appeared in females; the regulator is X-linked." },
+      { q: "When bile-acid synthesis genes (Cyp7a1) drop, cholesterol...", options: ["Is exhaled", "Backs up / rises in the liver", "Turns into glucose", "Is stored in muscle"], answer: 1, explain: "Less conversion to bile acids means cholesterol accumulates in hepatocytes." }
     ],
     setAside: "Epigenetics mechanism (histone marks, KDM6A recruitment). Methods (ChIP-seq, CUT&Tag, RIME, RNA-seq, AAV-PCSK9). Sex-chromosome detail — one sentence: 'the regulator is X-linked, so the effect differs by sex.'"
   },
@@ -288,23 +352,27 @@ window.PAPERS = [
     message: "One mitochondrial enzyme runs the first step of branched-chain amino acid breakdown — a textbook transamination. Remove it and the BCAAs pile up while nitrogen reroutes through glutamate, glutamine, and arginine. Transamination and the glutamate nitrogen hub inside a living immune cell.",
     primer: "Method primer: a western blot detects a specific protein's amount; knocking out an enzyme (BCATm) tests its reaction by measuring substrates and products. Isotope tracing follows where atoms go.",
     figures: [
-      { fig: "Figure 1a", label: "The two enzymes", text: "Western blot of mitochondrial BCATm and cytosolic BCATc. T cells transaminate BCAAs in two compartments; activation turns up the cytosolic enzyme." },
-      { fig: "Figure 1b, c", label: "The reaction", text: "Knocking out BCATm sharply lowers leucine transamination (1b) and downstream oxidation (1c) — a direct readout of the reaction." },
-      { fig: "Figure 1d", label: "BCAAs pile up", text: "With the mitochondrial step gone, intracellular leucine, isoleucine, and valine all rise — as predicted." },
-      { fig: "Figure 1e", label: "Nitrogen follows glutamate", text: "Glutamine and arginine rise (glutamate unchanged). Transamination feeds the glutamate/glutamine/arginine pool." },
-      { fig: "Figure 6d–e", label: "Clinical anchor", text: "BCAT2 (BCATm) and BCAT1 (BCATc) are expressed across human T-cell lymphomas; higher expression tracks worse survival." }
+      { fig: "Figure 1a", label: "The two enzymes", text: "Western blot of mitochondrial BCATm and cytosolic BCATc. T cells transaminate BCAAs in two compartments; activation turns up the cytosolic enzyme.", look: "Two bands = two compartments doing the same reaction." },
+      { fig: "Figure 1b, c", label: "The reaction", text: "Knocking out BCATm sharply lowers leucine transamination (1b) and downstream oxidation (1c) — a direct readout of the reaction.", look: "Remove the enzyme → the reaction rate drops. Clean cause-effect." },
+      { fig: "Figure 1d", label: "BCAAs pile up", text: "With the mitochondrial step gone, intracellular leucine, isoleucine, and valine all rise — as predicted.", look: "Substrate accumulates when its consuming enzyme is deleted." },
+      { fig: "Figure 1e", label: "Nitrogen follows glutamate", text: "Glutamine and arginine rise (glutamate unchanged). Transamination feeds the glutamate/glutamine/arginine pool.", look: "The amino group's downstream carriers rise — the nitrogen hub." },
+      { fig: "Figure 6d–e", label: "Clinical anchor", text: "BCAT2 (BCATm) and BCAT1 (BCATc) are expressed across human T-cell lymphomas; higher expression tracks worse survival.", look: "Enzyme level correlates with patient survival — why it matters." }
     ],
     concepts: [
       { term: "Transamination", def: "BCATm reversibly transfers an amino group from a BCAA to α-ketoglutarate, making a branched-chain α-keto acid + glutamate. Pyridoxal phosphate (vitamin B6) is the shared cofactor of all transaminases." },
+      { term: "Pyridoxal phosphate (PLP)", def: "The vitamin-B6-derived cofactor that shuttles the amino group in every aminotransferase reaction." },
       { term: "Branched-chain amino acids", def: "Leucine, isoleucine, valine — essential amino acids whose catabolism is tightly controlled." },
-      { term: "Two isoenzymes", def: "Mitochondrial BCATm vs. cytosolic BCATc — metabolic compartmentation of the same reaction." },
+      { term: "Two isoenzymes", def: "Mitochondrial BCATm vs. cytosolic BCATc — metabolic compartmentation of the same reaction in a cell." },
       { term: "Glutamate nitrogen hub", def: "The α-ketoglutarate ⇌ glutamate pair collects amino groups, feeding glutamine (nitrogen transport) and arginine (urea cycle)." },
-      { term: "BCKDH complex", def: "The committed oxidation step after transamination — the branched-chain analogue of pyruvate dehydrogenase (TPP, lipoic acid, FAD, NAD⁺, CoA)." }
+      { term: "BCKDH complex", def: "The committed oxidation step after transamination — the branched-chain analogue of pyruvate dehydrogenase (TPP, lipoic acid, FAD, NAD⁺, CoA)." },
+      { term: "α-ketoglutarate ⇌ glutamate", def: "The universal amino-group acceptor/donor couple linking amino-acid nitrogen to the TCA cycle." }
     ],
     quiz: [
       { q: "What cofactor do all transaminases share?", options: ["Biotin", "Pyridoxal phosphate (vitamin B6)", "Thiamine only", "NADPH"], answer: 1, explain: "Pyridoxal phosphate (PLP), derived from vitamin B6, is the universal cofactor of aminotransferases." },
       { q: "Deleting BCATm caused BCAAs to...", options: ["Disappear", "Stay the same", "Pile up (rise)", "Convert to glucose"], answer: 2, explain: "Removing the enzyme that consumes leucine/isoleucine/valine makes them accumulate." },
-      { q: "The BCKDH complex is analogous to which enzyme?", options: ["Hexokinase", "Pyruvate dehydrogenase", "Lactate dehydrogenase", "ATP synthase"], answer: 1, explain: "BCKDH is the branched-chain analogue of pyruvate dehydrogenase, using the same multi-cofactor logic." }
+      { q: "In transamination, the amino group from a BCAA is transferred to...", options: ["Pyruvate", "α-ketoglutarate (making glutamate)", "Oxaloacetate only", "Water"], answer: 1, explain: "BCATm transfers the amino group to α-ketoglutarate, producing glutamate plus a branched-chain keto acid." },
+      { q: "The BCKDH complex is analogous to which enzyme?", options: ["Hexokinase", "Pyruvate dehydrogenase", "Lactate dehydrogenase", "ATP synthase"], answer: 1, explain: "BCKDH is the branched-chain analogue of pyruvate dehydrogenase, using the same multi-cofactor logic." },
+      { q: "Why does glutamine and arginine rise in the knockout?", options: ["They are made from fat", "The amino-group nitrogen reroutes through the glutamate hub", "They leak from the nucleus", "They come from glucose"], answer: 1, explain: "Transamination feeds the glutamate pool, which supplies glutamine (transport) and arginine (urea cycle)." }
     ],
     setAside: "Bioenergetics (respirometry, glycolysis-vs-OXPHOS, AMPK/mTOR) — one line. Immunology (T-cell subsets, exhaustion markers, cytokines) — 'the knockout cells fought tumors better.' Genetics/-omics — one line each."
   },
@@ -316,30 +384,33 @@ window.PAPERS = [
     message: "A single amino acid — proline — does far more than build protein. When the placenta breaks proline down, that catabolism tunes mitochondrial redox balance and switches on the signals that grow new blood vessels; too little proline means poor placental vasculature and low birth weight.",
     primer: "Method primer: targeted metabolomics measures amino-acid levels in placenta and blood; experiments on placental blood-vessel cells (PVECs) test cause and effect. Assays like tube formation measure how well cells build vessels.",
     figures: [
-      { fig: "Figure 1", label: "The hook (metabolomics)", text: "Low-birth-weight piglets and poorly vascularized placentas have low proline. Amino-acid profiling flags proline (with glutamine/glutamate) as the standout." },
-      { fig: "Figure 2", label: "Cause, not correlation", text: "A proline-deficient diet in pregnancy worsens placental angiogenesis and outcomes — proline is necessary." },
-      { fig: "Figure 3", label: "Downstream targets", text: "Proline's effect depends on the growth factors VEGF-A and bFGF — the molecules that tell vessels to grow." },
-      { fig: "Figure 4", label: "The signalling link", text: "Proline works through phosphorylated STAT3 (p-STAT3 Tyr705), which drives bFGF/VEGF-A." },
-      { fig: "Figure 6", label: "Biochemistry heart (spend time)", text: "The four metabolic fates of proline, and the demonstration it's the PRODH catabolic route that maintains mitochondrial ROS balance and drives angiogenesis." },
-      { fig: "Figure 7", label: "How redox control works", text: "Proline–PRODH catabolism keeps mtROS in a healthy range via a SIRT1 → SOD2 pathway; losing it lets ROS run high and angiogenesis fail." }
+      { fig: "Figure 1", label: "The hook (metabolomics)", text: "Low-birth-weight piglets and poorly vascularized placentas have low proline. Amino-acid profiling flags proline (with glutamine/glutamate) as the standout.", look: "Proline is the amino acid that stands out as deficient." },
+      { fig: "Figure 2", label: "Cause, not correlation", text: "A proline-deficient diet in pregnancy worsens placental angiogenesis and outcomes — proline is necessary.", look: "Remove dietary proline → vasculature suffers." },
+      { fig: "Figure 3", label: "Downstream targets", text: "Proline's effect depends on the growth factors VEGF-A and bFGF — the molecules that tell vessels to grow.", look: "VEGF-A / bFGF are the actual angiogenesis signals." },
+      { fig: "Figure 4", label: "The signalling link", text: "Proline works through phosphorylated STAT3 (p-STAT3 Tyr705), which drives bFGF/VEGF-A.", look: "Proline → p-STAT3 → growth factors." },
+      { fig: "Figure 6", label: "Biochemistry heart (spend time)", text: "The four metabolic fates of proline, and the demonstration it's the PRODH catabolic route that maintains mitochondrial ROS balance and drives angiogenesis.", look: "Show the four fates, then zoom on PRODH → P5C." },
+      { fig: "Figure 7", label: "How redox control works", text: "Proline–PRODH catabolism keeps mtROS in a healthy range via a SIRT1 → SOD2 pathway; losing it lets ROS run high and angiogenesis fail.", look: "SIRT1 activates SOD2 → ROS stays balanced → vessels grow." }
     ],
     concepts: [
       { term: "Proline catabolism (PRODH)", def: "PRODH oxidizes proline to P5C (pyrroline-5-carboxylate), which feeds glutamate and the TCA cycle for energy. The centerpiece reaction." },
       { term: "Four fates of proline", def: "(1) PRODH → P5C → TCA energy; (2) → polyamines via ornithine; (3) → prolyl-tRNA for collagen; (4) → hydroxyproline. One amino acid, several pathways." },
+      { term: "P5C → glutamate", def: "Pyrroline-5-carboxylate is converted to glutamate, linking proline directly to the α-ketoglutarate/TCA hub." },
       { term: "Glutamate hub", def: "Proline, glutamate, and glutamine sit in one interconvertible pool — the same nitrogen-hub theme as transamination." },
       { term: "mtROS & SOD2", def: "ROS is a by-product of mitochondrial metabolism; SOD2 (superoxide dismutase 2) keeps it in check — the redox side of bioenergetics." },
-      { term: "SIRT1 → SOD2", def: "SIRT1 (an NAD⁺-dependent deacetylase) activates SOD2 by removing acetyl groups — controlling an enzyme via post-translational modification, linked to NAD⁺/energy state." }
+      { term: "SIRT1 → SOD2", def: "SIRT1 (an NAD⁺-dependent deacetylase) activates SOD2 by removing acetyl groups — controlling an enzyme via post-translational modification, linked to NAD⁺/energy state." },
+      { term: "VEGF-A / bFGF", def: "Growth factors that instruct endothelial cells to proliferate and form new blood vessels (angiogenesis)." }
     ],
     quiz: [
       { q: "What does PRODH do to proline, and where does the product go?", options: ["Builds it into collagen", "Oxidizes it to P5C, feeding glutamate and the TCA cycle", "Converts it to glucose directly", "Turns it into a fatty acid"], answer: 1, explain: "PRODH oxidizes proline to pyrroline-5-carboxylate (P5C), which feeds glutamate and the TCA cycle for energy." },
       { q: "How does SIRT1 activate the antioxidant enzyme SOD2?", options: ["By phosphorylating it", "By deacetylating it (NAD⁺-dependent)", "By cleaving it", "By adding a sulfate"], answer: 1, explain: "SIRT1 is an NAD⁺-dependent deacetylase; removing acetyl groups from SOD2 activates it." },
-      { q: "Low placental proline was linked to...", options: ["High birth weight", "Poor vascularization and low birth weight", "Excess collagen", "More insulin"], answer: 1, explain: "Insufficient proline meant impaired placental angiogenesis and higher low-birth-weight risk." }
+      { q: "Low placental proline was linked to...", options: ["High birth weight", "Poor vascularization and low birth weight", "Excess collagen", "More insulin"], answer: 1, explain: "Insufficient proline meant impaired placental angiogenesis and higher low-birth-weight risk." },
+      { q: "Which growth factors carry out proline's pro-angiogenic effect?", options: ["Insulin and glucagon", "VEGF-A and bFGF", "GLP-1 and GIP", "APOA1 and APOM"], answer: 1, explain: "Proline acts through p-STAT3 to drive VEGF-A and bFGF, the angiogenesis signals." },
+      { q: "One of the four metabolic fates of proline is conversion to...", options: ["Cholesterol", "Polyamines via ornithine", "Lactate", "Bile acids"], answer: 1, explain: "Besides PRODH→P5C, proline routes to polyamines (via ornithine), prolyl-tRNA (collagen), and hydroxyproline." }
     ],
     setAside: "Signalling detail (full p-STAT3 cascade, FoxO3a). Animal-husbandry specifics (sampling, litter numbers). -omics/assay machinery. The polyamine/collagen branches — keep focus on the PRODH→P5C→redox route."
   }
 ];
 
-// Global guidance shown on the home page
 window.GUIDANCE = {
   title: "Final-Week Journal Presentation",
   course: "General Biochemistry · VET67-206 · Week 15",
@@ -353,35 +424,250 @@ window.GUIDANCE = {
 };
 
 </script>
+<script>
+// Original interactive biochemistry animations for each paper.
+// Rendered by buildViz() in app: nodes + edges (with flowing particles) + step narration.
+// type: signal | enzyme | product | organ | bad
+window.VIZ = {
+  A: {
+    w: 700, h: 400,
+    legend: [ {c:"flow", t:"carbon flow through glycolysis"}, {c:"nad", t:"NAD⁺ ⇌ NADH recycling"} ],
+    nodes: [
+      {id:"glycogen", x:110, y:48,  label:"Glycogen", type:"signal"},
+      {id:"glucose",  x:110, y:120, label:"Glucose", type:"signal"},
+      {id:"upper",    x:110, y:196, w:190, label:"Upper glycolysis\nPFK — committed step", type:"enzyme"},
+      {id:"g3p",      x:110, y:272, w:180, label:"Glyceraldehyde-3-P", type:"signal"},
+      {id:"pyr",      x:110, y:348, label:"Pyruvate", type:"signal"},
+      {id:"gapdh",    x:330, y:262, label:"GAPDH\nneeds NAD⁺", type:"enzyme"},
+      {id:"ldh",      x:330, y:348, label:"LDH", type:"enzyme", w:110},
+      {id:"nadp",     x:470, y:225, label:"NAD⁺", type:"product", w:96, h:40},
+      {id:"nadh",     x:470, y:305, label:"NADH", type:"signal", w:96, h:40},
+      {id:"g3pb",     x:610, y:225, label:"Glycerol-3-P", type:"product", w:120},
+      {id:"lactate",  x:610, y:348, label:"Lactate", type:"product", w:120}
+    ],
+    edges: [
+      {from:"glycogen", to:"glucose"}, {from:"glucose", to:"upper"},
+      {from:"upper", to:"g3p"}, {from:"g3p", to:"pyr"},
+      {from:"pyr", to:"ldh"}, {from:"ldh", to:"lactate"},
+      {from:"g3p", to:"gapdh", dash:true},
+      {from:"nadp", to:"gapdh", kind:"nad"}, {from:"gapdh", to:"nadh", kind:"nad"},
+      {from:"nadh", to:"ldh", kind:"nad"}, {from:"ldh", to:"nadp", kind:"nad"},
+      {from:"nadh", to:"g3pb", kind:"nad"}, {from:"g3pb", to:"nadp", kind:"nad", dash:true}
+    ],
+    steps: [
+      {t:"Glycogen → glucose fuels glycolysis", on:["glycogen","glucose"]},
+      {t:"PFK is the committed, rate-limiting valve of glycolysis", on:["upper"]},
+      {t:"GAPDH oxidizes G3P — but it must have NAD⁺ to work", on:["g3p","gapdh","nadp","nadh"]},
+      {t:"Making lactate & glycerol-3-P regenerates NAD⁺, so glycolysis keeps making ATP", on:["ldh","lactate","nadh","nadp","g3pb"]},
+      {t:"Positive pacing = faster glycolytic flux and quicker glycogen use", on:[]}
+    ]
+  },
+
+  B: {
+    w: 700, h: 400,
+    legend: [ {c:"nad", t:"energy-stress / ROS signal"}, {c:"flow", t:"remodelling machinery"} ],
+    nodes: [
+      {id:"exercise", x:120, y:60,  label:"Exercise bout", type:"organ"},
+      {id:"stress",   x:120, y:155, label:"ATP↓  AMP↑\nROS↑", type:"signal"},
+      {id:"ampk",     x:120, y:255, label:"AMPK\nfuel gauge", type:"enzyme"},
+      {id:"pgc",      x:120, y:350, label:"PGC-1α → biogenesis", type:"product", w:190},
+      {id:"drp1",     x:355, y:150, label:"DRP1", type:"enzyme", w:110},
+      {id:"fission",  x:560, y:150, label:"Fission\nsplit — triage", type:"signal"},
+      {id:"mfn",      x:355, y:290, label:"MFN1/2 · OPA1", type:"enzyme", w:150},
+      {id:"fusion",   x:560, y:290, label:"Fusion\nrebuild", type:"product"}
+    ],
+    edges: [
+      {from:"exercise", to:"stress", kind:"nad"}, {from:"stress", to:"ampk", kind:"nad"},
+      {from:"ampk", to:"drp1"}, {from:"drp1", to:"fission"},
+      {from:"stress", to:"drp1", kind:"nad", dash:true},
+      {from:"ampk", to:"mfn", dash:true}, {from:"mfn", to:"fusion"},
+      {from:"ampk", to:"pgc"}, {from:"fusion", to:"exercise", dash:true}
+    ],
+    steps: [
+      {t:"An exercise bout drops ATP and raises ROS — energy stress", on:["exercise","stress"]},
+      {t:"AMPK senses the low energy charge (the cell's fuel gauge)", on:["stress","ampk"]},
+      {t:"DRP1 drives fission — 'triage' to isolate damaged parts", on:["ampk","drp1","fission"]},
+      {t:"MFN1/2 & OPA1 re-fuse during recovery — 'rebuild' the network", on:["mfn","fusion"]},
+      {t:"AMPK also drives PGC-1α → new mitochondria (biogenesis)", on:["ampk","pgc"]},
+      {t:"Endurance = biggest, most sustained triage-then-rebuild cycle", on:[]}
+    ]
+  },
+
+  C: {
+    w: 720, h: 400,
+    legend: [ {c:"nad", t:"signal (microbe / immune)"}, {c:"flow", t:"hormone action"} ],
+    nodes: [
+      {id:"meal",     x:100, y:60,  label:"Meal + microbes", type:"organ", w:170},
+      {id:"butyrate", x:100, y:150, label:"Butyrate (SCFA)", type:"signal", w:170},
+      {id:"il22",     x:100, y:240, label:"IL-22", type:"signal", w:120},
+      {id:"lcell",    x:330, y:150, label:"Gut L-cell", type:"organ"},
+      {id:"stat3",    x:330, y:245, label:"STAT3 → Gcg gene", type:"enzyme", w:180},
+      {id:"glp1",     x:330, y:340, label:"GLP-1", type:"product", w:120},
+      {id:"glucose",  x:560, y:120, label:"Blood glucose ↓", type:"signal", w:170},
+      {id:"pancreas", x:560, y:235, label:"Pancreas β-cell", type:"organ", w:170},
+      {id:"insulin",  x:560, y:340, label:"Insulin", type:"product", w:120}
+    ],
+    edges: [
+      {from:"meal", to:"butyrate", kind:"nad"}, {from:"butyrate", to:"il22", kind:"nad"},
+      {from:"il22", to:"lcell", kind:"nad"}, {from:"lcell", to:"stat3"},
+      {from:"stat3", to:"glp1"}, {from:"glp1", to:"pancreas"},
+      {from:"pancreas", to:"insulin"}, {from:"insulin", to:"glucose"}
+    ],
+    steps: [
+      {t:"A meal and gut microbes produce butyrate (a short-chain fatty acid)", on:["meal","butyrate"]},
+      {t:"Butyrate raises the immune signal IL-22", on:["butyrate","il22"]},
+      {t:"IL-22 → STAT3 binds the Gcg promoter → GLP-1 made in L-cells", on:["lcell","stat3","glp1"]},
+      {t:"GLP-1 (an incretin) tells the pancreas to release insulin", on:["glp1","pancreas","insulin"]},
+      {t:"Insulin lowers blood glucose — glucose homeostasis restored", on:["insulin","glucose"]},
+      {t:"Block the GLP-1 receptor and the benefit disappears — the causal proof", on:["glp1","pancreas"]}
+    ]
+  },
+
+  D: {
+    w: 720, h: 400,
+    legend: [ {c:"nad", t:"fructose route (liver)"}, {c:"flow", t:"glucose route (muscle)"} ],
+    nodes: [
+      {id:"sugar",   x:360, y:48,  label:"Sugary drink", type:"signal", w:170},
+      {id:"fructose",x:200, y:130, label:"Fructose", type:"signal", w:130},
+      {id:"glucose", x:520, y:130, label:"Glucose", type:"signal", w:130},
+      {id:"fk",      x:200, y:215, label:"Fructokinase\nbypasses PFK", type:"enzyme", w:180},
+      {id:"liver",   x:200, y:300, label:"Liver", type:"organ", w:120},
+      {id:"fat",     x:200, y:372, label:"Liver fat → hepatic insulin resistance", type:"bad", w:250},
+      {id:"glut4",   x:520, y:215, label:"GLUT4 uptake", type:"enzyme", w:160},
+      {id:"muscle",  x:520, y:300, label:"Muscle (PFK-regulated)", type:"organ", w:200},
+      {id:"mir",     x:520, y:372, label:"Muscle insulin resistance", type:"bad", w:220}
+    ],
+    edges: [
+      {from:"sugar", to:"fructose", kind:"nad"}, {from:"sugar", to:"glucose"},
+      {from:"fructose", to:"fk", kind:"nad"}, {from:"fk", to:"liver", kind:"nad"}, {from:"liver", to:"fat", kind:"nad"},
+      {from:"glucose", to:"glut4"}, {from:"glut4", to:"muscle"}, {from:"muscle", to:"mir"}
+    ],
+    steps: [
+      {t:"A sugary drink delivers two different molecules: fructose + glucose", on:["sugar","fructose","glucose"]},
+      {t:"Fructose → fructokinase, entering BELOW the PFK control valve", on:["fructose","fk"]},
+      {t:"Unregulated carbon → liver fat → hepatic insulin resistance", on:["liver","fat"]},
+      {t:"Glucose → GLUT4 into muscle, where PFK still regulates flux", on:["glucose","glut4","muscle"]},
+      {t:"Glucose mainly worsens MUSCLE insulin sensitivity", on:["muscle","mir"]},
+      {t:"Two molecules, two tissues — 'sugar' is not one thing", on:[]}
+    ]
+  },
+
+  E: {
+    w: 720, h: 420,
+    legend: [ {c:"flow", t:"cholesterol out (VLDL/LDL)"}, {c:"good", t:"HDL reverse transport"}, {c:"bad", t:"plaque"} ],
+    nodes: [
+      {id:"chol",    x:110, y:70,  label:"Cholesterol", type:"signal"},
+      {id:"liver",   x:110, y:210, label:"Liver", type:"organ", w:130, h:60},
+      {id:"bile",    x:110, y:340, label:"Bile acids (Cyp7a1)", type:"product", w:180},
+      {id:"vldl",    x:360, y:120, label:"VLDL → LDL", type:"signal", w:150},
+      {id:"tissues", x:600, y:120, label:"Tissues / arteries", type:"organ", w:180},
+      {id:"plaque",  x:600, y:240, label:"Atherosclerotic plaque", type:"bad", w:200},
+      {id:"hdl",     x:360, y:300, label:"HDL · APOA1", type:"product", w:150}
+    ],
+    edges: [
+      {from:"chol", to:"liver"}, {from:"liver", to:"vldl"}, {from:"vldl", to:"tissues"},
+      {from:"tissues", to:"plaque", kind:"bad"},
+      {from:"tissues", to:"hdl", kind:"good"}, {from:"hdl", to:"liver", kind:"good"},
+      {from:"liver", to:"bile"}
+    ],
+    steps: [
+      {t:"The liver packages cholesterol into VLDL, which becomes LDL", on:["chol","liver","vldl"]},
+      {t:"LDL delivers cholesterol to tissues — excess builds arterial plaque", on:["vldl","tissues","plaque"]},
+      {t:"HDL (APOA1) does reverse transport: cholesterol back to the liver", on:["hdl","liver"]},
+      {t:"The liver excretes cholesterol as bile acids (Cyp7a1) — the exit route", on:["liver","bile"]},
+      {t:"Losing KDM6A: VLDL↑, HDL↓, bile↓ → more plaque (in females)", on:["vldl","hdl","bile","plaque"]}
+    ]
+  },
+
+  F: {
+    w: 720, h: 400,
+    legend: [ {c:"nad", t:"amino-group (nitrogen) transfer"}, {c:"flow", t:"carbon skeletons"} ],
+    nodes: [
+      {id:"bcaa",    x:120, y:110, label:"Leucine (BCAA)", type:"signal", w:170},
+      {id:"akg",     x:120, y:290, label:"α-ketoglutarate", type:"signal", w:180},
+      {id:"bcatm",   x:360, y:200, label:"BCATm\n+ PLP (vit B6)", type:"enzyme", w:160},
+      {id:"keto",    x:590, y:110, label:"Branched-chain\nketo acid", type:"product", w:170},
+      {id:"glu",     x:590, y:250, label:"Glutamate", type:"product", w:150},
+      {id:"gln",     x:590, y:340, label:"→ Glutamine (transport)", type:"signal", w:220},
+      {id:"arg",     x:590, y:40,  label:"→ Arginine (urea cycle)", type:"signal", w:220}
+    ],
+    edges: [
+      {from:"bcaa", to:"bcatm", kind:"nad"}, {from:"akg", to:"bcatm"},
+      {from:"bcatm", to:"keto"}, {from:"bcatm", to:"glu", kind:"nad"},
+      {from:"glu", to:"gln", kind:"nad"}, {from:"glu", to:"arg", kind:"nad"}
+    ],
+    steps: [
+      {t:"Two substrates enter: a branched-chain amino acid + α-ketoglutarate", on:["bcaa","akg"]},
+      {t:"BCATm transfers the amino group, using PLP (vitamin B6) as cofactor", on:["bcaa","akg","bcatm"]},
+      {t:"Products: a branched-chain keto acid (carbon) + glutamate (nitrogen)", on:["keto","glu"]},
+      {t:"Glutamate is the nitrogen hub → glutamine & arginine", on:["glu","gln","arg"]},
+      {t:"Delete BCATm → BCAAs pile up and nitrogen reroutes through glutamate", on:["bcaa","glu"]}
+    ]
+  },
+
+  G: {
+    w: 810, h: 420,
+    legend: [ {c:"flow", t:"proline catabolism → TCA"}, {c:"nad", t:"redox / ROS control"}, {c:"good", t:"angiogenesis"} ],
+    nodes: [
+      {id:"proline", x:110, y:70,  label:"Proline", type:"signal"},
+      {id:"prodh",   x:110, y:170, label:"PRODH", type:"enzyme", w:120},
+      {id:"p5c",     x:110, y:265, label:"P5C", type:"signal", w:100},
+      {id:"glu",     x:110, y:355, label:"Glutamate → TCA", type:"product", w:170},
+      {id:"mito",    x:340, y:175, label:"Mitochondrion\nmtROS", type:"organ", w:160},
+      {id:"sirt1",   x:340, y:320, label:"SIRT1 (NAD⁺)", type:"enzyme", w:150},
+      {id:"sod2",    x:530, y:320, label:"SOD2", type:"enzyme", w:110},
+      {id:"ros",     x:530, y:190, label:"ROS balanced", type:"signal", w:150},
+      {id:"stat3",   x:530, y:80,  label:"p-STAT3", type:"enzyme", w:130},
+      {id:"vegf",    x:700, y:80,  label:"VEGF-A / bFGF", type:"product", w:150},
+      {id:"vessels", x:700, y:190, label:"New vessels", type:"product", w:140}
+    ],
+    edges: [
+      {from:"proline", to:"prodh"}, {from:"prodh", to:"p5c"}, {from:"p5c", to:"glu"},
+      {from:"prodh", to:"mito", kind:"nad"}, {from:"mito", to:"ros", kind:"nad"},
+      {from:"sirt1", to:"sod2", kind:"nad"}, {from:"sod2", to:"ros", kind:"nad"},
+      {from:"ros", to:"stat3", kind:"good"}, {from:"stat3", to:"vegf", kind:"good"}, {from:"vegf", to:"vessels", kind:"good"}
+    ],
+    steps: [
+      {t:"PRODH oxidizes proline → P5C → glutamate → TCA cycle (energy)", on:["proline","prodh","p5c","glu"]},
+      {t:"That catabolism runs the mitochondrion, producing mtROS", on:["prodh","mito","ros"]},
+      {t:"SIRT1 (NAD⁺-dependent) activates SOD2 to keep ROS balanced", on:["sirt1","sod2","ros"]},
+      {t:"Balanced ROS → p-STAT3 → VEGF-A / bFGF", on:["ros","stat3","vegf"]},
+      {t:"Growth factors build new placental blood vessels", on:["vegf","vessels"]},
+      {t:"Too little proline → ROS runs high → angiogenesis fails → low birth weight", on:["proline","ros","vessels"]}
+    ]
+  }
+};
+
+</script>
 
 <script>
 (function(){
-  const P = window.PAPERS, G = window.GUIDANCE;
+  const P = window.PAPERS, G = window.GUIDANCE, VIZ = window.VIZ||{};
   const view = document.getElementById('view');
   const nav = document.getElementById('paper-nav');
   document.getElementById('site-title').textContent = G.title + " — Study Guide";
   document.getElementById('site-sub').textContent = G.course;
   document.title = "VET67-206 · " + G.title;
+  const NS="http://www.w3.org/2000/svg";
+  let vizTimer=null;
 
-  // build nav
-  const homeBtn = mkNavBtn("★ Home", null);
+  const homeBtn = mkNavBtn("★ Home", "__home");
   nav.appendChild(homeBtn);
   P.forEach(p=>nav.appendChild(mkNavBtn(p.letter, p.letter, p.group)));
   nav.appendChild(mkNavBtn("Glossary", "__glossary"));
 
   function mkNavBtn(label, key, grp){
     const b=document.createElement('button');
-    b.dataset.key = key===null? "__home" : key;
-    if(grp){ b.innerHTML = label + ' <span class="g">G'+grp+'</span>'; }
-    else b.textContent = label;
+    b.dataset.key = key;
+    if(grp){ b.innerHTML = label + ' <span class="g">G'+grp+'</span>'; } else b.textContent = label;
     b.onclick=()=>route(b.dataset.key);
     return b;
   }
-  function setActive(key){
-    [...nav.children].forEach(b=>b.classList.toggle('active', b.dataset.key===key));
-  }
+  function setActive(key){[...nav.children].forEach(b=>b.classList.toggle('active', b.dataset.key===key));}
+  function esc(s){return (s||"").replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 
   function route(key){
+    if(vizTimer){clearInterval(vizTimer);vizTimer=null;}
     window.scrollTo({top:0,behavior:'smooth'});
     if(key==="__home"||!key){ setActive("__home"); renderHome(); return; }
     if(key==="__glossary"){ setActive("__glossary"); renderGlossary(); return; }
@@ -389,16 +675,12 @@ window.GUIDANCE = {
     renderPaper(P.find(p=>p.letter===key));
   }
 
-  function esc(s){return (s||"").replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
-
   function renderHome(){
     let tips = G.tips.map(t=>`<li>${esc(t)}</li>`).join('');
     let cards = P.map(p=>`
       <button class="pcard" onclick="__go('${p.letter}')">
-        <div class="row1"><span class="badge">${p.letter}</span>
-          <span class="grp">Group ${p.group}</span></div>
-        <h3>${esc(p.title)}</h3>
-        <div class="tagline">${esc(p.tag)}</div>
+        <div class="row1"><span class="badge">${p.letter}</span><span class="grp">Group ${p.group}</span></div>
+        <h3>${esc(p.title)}</h3><div class="tagline">${esc(p.tag)}</div>
       </button>`).join('');
     view.innerHTML = `
       <div class="home-intro">
@@ -412,63 +694,203 @@ window.GUIDANCE = {
   }
 
   function renderPaper(p){
+    const hasViz = !!VIZ[p.letter];
     view.innerHTML = `
       <button class="back-btn" onclick="__go('__home')">← All papers</button>
       <div class="paper-head">
         <span class="badge">${p.letter}</span>
-        <div>
-          <h2>${esc(p.title)}</h2>
-          <div class="tagline">${esc(p.tag)}</div>
-        </div>
+        <div><h2>${esc(p.title)}</h2><div class="tagline">${esc(p.tag)}</div></div>
         <span class="grp">Group ${p.group}</span>
       </div>
       <div class="cite">${esc(p.citation)}</div>
       <div class="tabs" id="ptabs">
         <button data-t="overview" class="active">Overview</button>
+        ${hasViz?'<button data-t="viz">▶ Visualize</button>':''}
         <button data-t="figures">Figure walkthrough</button>
         <button data-t="cards">Flashcards</button>
         <button data-t="quiz">Self-quiz</button>
       </div>
       <div id="pbody"></div>`;
     const tabs=[...document.querySelectorAll('#ptabs button')];
-    tabs.forEach(t=>t.onclick=()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');paperTab(p,t.dataset.t);});
+    tabs.forEach(t=>t.onclick=()=>{
+      if(vizTimer){clearInterval(vizTimer);vizTimer=null;}
+      tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');paperTab(p,t.dataset.t);
+    });
     paperTab(p,'overview');
   }
 
   function paperTab(p,t){
     const body=document.getElementById('pbody');
     if(t==='overview'){
-      body.innerHTML=`
-        <div class="panel">
-          <div class="msg"><span class="lab">Message to deliver</span>${esc(p.message)}</div>
-          <div class="primer">${esc(p.primer)}</div>
-          <h4 class="sec" style="margin-top:18px">Set aside (don't over-invest)</h4>
-          <div class="aside-box">${esc(p.setAside)}</div>
-        </div>`;
-    } else if(t==='figures'){
+      body.innerHTML=`<div class="panel">
+        <div class="msg"><span class="lab">Message to deliver</span>${esc(p.message)}</div>
+        <div class="primer">${esc(p.primer)}</div>
+        <h4 class="sec" style="margin-top:18px">Set aside (don't over-invest)</h4>
+        <div class="aside-box">${esc(p.setAside)}</div></div>`;
+    } else if(t==='viz'){ renderViz(p,body); }
+    else if(t==='figures'){
       const steps=p.figures.map((f,i)=>`
-        <div class="step"><div class="num">${i+1}</div>
+        <div class="stepc"><div class="num">${i+1}</div>
           <div><span class="fig">${esc(f.fig)}</span> — <span class="figlab">${esc(f.label)}</span>
-          <div class="txt">${esc(f.text)}</div></div></div>`).join('');
+          <div class="txt">${esc(f.text)}</div>
+          ${f.look?`<div class="look"><b>Look for:</b> ${esc(f.look)}</div>`:''}</div></div>`).join('');
       body.innerHTML=`<div class="panel"><h4 class="sec">Present these, in this order</h4><div class="steps">${steps}</div></div>`;
     } else if(t==='cards'){
-      const cards=p.concepts.map((c,i)=>`
+      const cards=p.concepts.map(c=>`
         <div class="flip" onclick="this.classList.toggle('flipped')">
           <div class="flip-in">
             <div class="face front"><div class="term">${esc(c.term)}</div><span class="hint">tap to flip</span></div>
             <div class="face back"><div class="term">${esc(c.term)}</div>${esc(c.def)}</div>
           </div></div>`).join('');
-      body.innerHTML=`<div class="panel"><h4 class="sec">Key concepts — tap to reveal</h4><div class="cards">${cards}</div></div>`;
-    } else if(t==='quiz'){
-      renderQuiz(p,body);
-    }
+      body.innerHTML=`<div class="panel"><h4 class="sec">Key concepts — tap to reveal (${p.concepts.length})</h4><div class="cards">${cards}</div></div>`;
+    } else if(t==='quiz'){ renderQuiz(p,body); }
   }
 
+  /* ---------- VISUALIZE ---------- */
+  function renderViz(p,body){
+    const v=VIZ[p.letter];
+    body.innerHTML=`<div class="panel viz-wrap">
+      <h4 class="sec">Watch the biochemistry — ${p.figures.length? 'step through the pathway':''}</h4>
+      <div class="viz-stage" id="vizStage"></div>
+      <div class="viz-controls">
+        <button class="ghost" id="vzPrev">‹ Prev</button>
+        <button id="vzPlay">▶ Play</button>
+        <button class="ghost" id="vzNext">Next ›</button>
+        <div class="viz-dots" id="vzDots"></div>
+      </div>
+      <div class="viz-cap" id="vzCap"></div>
+      <div class="viz-legend" id="vzLeg"></div>
+    </div>`;
+    const stage=document.getElementById('vizStage');
+    const svg=buildSVG(v);
+    stage.appendChild(svg);
+    // legend
+    document.getElementById('vzLeg').innerHTML = (v.legend||[]).map(l=>`<span><b class="lg-${l.c}"></b>${esc(l.t)}</span>`).join('');
+    // dots
+    const dotsC=document.getElementById('vzDots');
+    v.steps.forEach((s,i)=>{const d=document.createElement('i');d.onclick=()=>go(i);dotsC.appendChild(d);});
+    let cur=-1, playing=false;
+    const cap=document.getElementById('vzCap');
+    function applyStep(i){
+      const on = v.steps[i].on||[];
+      const set = new Set(on);
+      svg.querySelectorAll('.vznode').forEach(g=>{
+        const id=g.dataset.id;
+        g.classList.toggle('lit', set.has(id));
+        g.classList.toggle('dim', on.length>0 && !set.has(id));
+      });
+      svg.querySelectorAll('.vzedge').forEach(e=>{
+        const lit = on.length===0 || (set.has(e.dataset.a)&&set.has(e.dataset.b));
+        e.classList.toggle('dim', on.length>0 && !lit);
+      });
+      svg.querySelectorAll('.vzdot').forEach(dt=>{
+        const lit = on.length===0 || (set.has(dt.dataset.a)&&set.has(dt.dataset.b));
+        dt.classList.toggle('dim', on.length>0 && !lit);
+      });
+      [...dotsC.children].forEach((d,di)=>d.classList.toggle('on',di===i));
+      cap.innerHTML=`<span class="cnum">${i+1}/${v.steps.length}</span>${esc(v.steps[i].t)}`;
+      cur=i;
+      document.getElementById('vzPrev').disabled=(i===0);
+      document.getElementById('vzNext').disabled=(i===v.steps.length-1);
+    }
+    function go(i){ if(i<0||i>=v.steps.length)return; applyStep(i); }
+    function stop(){ playing=false; if(vizTimer){clearInterval(vizTimer);vizTimer=null;} document.getElementById('vzPlay').textContent='▶ Play'; }
+    function play(){
+      if(playing){stop();return;}
+      playing=true; document.getElementById('vzPlay').textContent='❚❚ Pause';
+      if(cur>=v.steps.length-1) applyStep(0);
+      vizTimer=setInterval(()=>{
+        if(cur>=v.steps.length-1){stop();return;}
+        applyStep(cur+1);
+      },2600);
+    }
+    document.getElementById('vzPrev').onclick=()=>{stop();go(cur-1);};
+    document.getElementById('vzNext').onclick=()=>{stop();go(cur+1);};
+    document.getElementById('vzPlay').onclick=play;
+    applyStep(0);
+  }
+
+  function buildSVG(v){
+    const svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('viewBox',`0 0 ${v.w} ${v.h}`);
+    svg.setAttribute('class','vzsvg');
+    // arrow marker
+    const defs=document.createElementNS(NS,'defs');
+    defs.innerHTML=`<marker id="vzarw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7c8aa0"/></marker>`;
+    svg.appendChild(defs);
+    const byId={}; v.nodes.forEach(n=>byId[n.id]=n);
+    function rect(n){ const w=n.w||150, h=n.h||46; return {x:n.x-w/2,y:n.y-h/2,w,h}; }
+    function edgePts(a,b){
+      const ra=rect(a), rb=rect(b);
+      const ax=a.x, ay=a.y, bx=b.x, by=b.y;
+      const dx=bx-ax, dy=by-ay;
+      function exit(r,cx,cy,dx,dy){
+        if(dx===0&&dy===0)return{x:cx,y:cy};
+        const hw=r.w/2,hh=r.h/2;
+        const tx=dx!==0?hw/Math.abs(dx):1e9, ty=dy!==0?hh/Math.abs(dy):1e9;
+        const t=Math.min(tx,ty); return {x:cx+dx*t,y:cy+dy*t};
+      }
+      const s=exit(ra,ax,ay,dx,dy), e=exit(rb,bx,by,-dx,-dy);
+      return {s,e};
+    }
+    // edges
+    v.edges.forEach((ed,i)=>{
+      const a=byId[ed.from], b=byId[ed.to];
+      const {s,e}=edgePts(a,b);
+      const path=document.createElementNS(NS,'path');
+      const d=`M ${s.x.toFixed(1)} ${s.y.toFixed(1)} L ${e.x.toFixed(1)} ${e.y.toFixed(1)}`;
+      path.setAttribute('d',d);
+      path.setAttribute('class','vzedge'+(ed.dash?' dash':''));
+      path.setAttribute('marker-end','url(#vzarw)');
+      path.dataset.a=ed.from; path.dataset.b=ed.to;
+      svg.appendChild(path);
+      // flowing dot
+      const dot=document.createElementNS(NS,'circle');
+      dot.setAttribute('r','4.5');
+      dot.setAttribute('class','vzdot '+(ed.kind||'flow'));
+      dot.dataset.a=ed.from; dot.dataset.b=ed.to;
+      const anim=document.createElementNS(NS,'animateMotion');
+      anim.setAttribute('dur',(2+ (i%3)*0.4).toFixed(1)+'s');
+      anim.setAttribute('repeatCount','indefinite');
+      anim.setAttribute('path',d);
+      dot.appendChild(anim);
+      svg.appendChild(dot);
+    });
+    // nodes
+    v.nodes.forEach(n=>{
+      const r=rect(n);
+      const g=document.createElementNS(NS,'g');
+      g.setAttribute('class','vznode t-'+(n.type||'signal'));
+      g.dataset.id=n.id;
+      const box=document.createElementNS(NS,'rect');
+      box.setAttribute('x',r.x);box.setAttribute('y',r.y);box.setAttribute('width',r.w);box.setAttribute('height',r.h);
+      box.setAttribute('rx','11');box.setAttribute('class','bx pulse');
+      g.appendChild(box);
+      const lines=(n.label||'').split('\n');
+      const t=document.createElementNS(NS,'text');
+      t.setAttribute('x',n.x);t.setAttribute('y',n.y);t.setAttribute('text-anchor','middle');
+      t.setAttribute('class','lbl');
+      const startDy=-((lines.length-1)*7);
+      lines.forEach((ln,li)=>{
+        const ts=document.createElementNS(NS,'tspan');
+        ts.setAttribute('x',n.x);ts.setAttribute('dy',(li===0?startDy+4:15));
+        ts.textContent=ln; t.appendChild(ts);
+      });
+      g.appendChild(t);
+      svg.appendChild(g);
+    });
+    return svg;
+  }
+
+  /* ---------- QUIZ ---------- */
   function renderQuiz(p,body){
-    body.innerHTML=`<div class="panel"><h4 class="sec">Test yourself</h4><div id="qlist"></div>
-      <div class="quiz-score" id="qscore"></div></div>`;
+    const total=p.quiz.length;
+    body.innerHTML=`<div class="panel">
+      <div class="quiz-top"><div class="qbar"><i id="qfill"></i></div><div class="qbar-label" id="qlab">0 / ${total} answered</div></div>
+      <div id="qlist"></div>
+      <div class="quiz-done" id="qdone"></div></div>`;
     const list=document.getElementById('qlist');
-    const state={answered:0,correct:0,total:p.quiz.length};
+    const st={answered:0,correct:0,total};
     p.quiz.forEach((item,qi)=>{
       const wrap=document.createElement('div');wrap.className='q';
       wrap.innerHTML=`<div class="qtext">${qi+1}. ${esc(item.q)}</div>`;
@@ -477,19 +899,28 @@ window.GUIDANCE = {
         const btn=document.createElement('button');btn.className='opt';btn.textContent=o;
         btn.onclick=()=>{
           if(wrap.dataset.done)return;
-          wrap.dataset.done="1";state.answered++;
+          wrap.dataset.done="1";st.answered++;
           opts.forEach(b=>b.disabled=true);
-          if(oi===item.answer){btn.classList.add('correct');state.correct++;}
+          if(oi===item.answer){btn.classList.add('correct');st.correct++;}
           else{btn.classList.add('wrong');opts[item.answer].classList.add('correct');}
           exp.classList.add('show');
-          if(state.answered===state.total)
-            document.getElementById('qscore').textContent=`Score: ${state.correct} / ${state.total}`;
+          document.getElementById('qfill').style.width=(st.answered/total*100)+'%';
+          document.getElementById('qlab').textContent=`${st.answered} / ${total} answered`;
+          if(st.answered===total) finish();
         };
         opts.push(btn);wrap.appendChild(btn);
       });
       const exp=document.createElement('div');exp.className='explain';exp.textContent="Why: "+item.explain;
       wrap.appendChild(exp);list.appendChild(wrap);
     });
+    function finish(){
+      const pct=Math.round(st.correct/total*100);
+      const msg = pct===100?"Perfect — you've got this paper.":pct>=70?"Solid understanding.":pct>=40?"Good start — review the flashcards.":"Revisit the overview and flashcards, then retry.";
+      const d=document.getElementById('qdone');
+      d.innerHTML=`<div class="big">${st.correct} / ${total}</div><div>${msg}</div><button class="retry" onclick="__go('${p.letter}')">↻ Retry quiz</button>`;
+      d.classList.add('show');
+      d.scrollIntoView({behavior:'smooth',block:'center'});
+    }
   }
 
   function renderGlossary(){
@@ -499,16 +930,15 @@ window.GUIDANCE = {
     view.innerHTML=`
       <button class="back-btn" onclick="__go('__home')">← All papers</button>
       <h2 style="margin:4px 0 4px">Glossary &amp; key molecules</h2>
-      <p style="color:var(--muted);font-size:.9rem;margin-top:0">Every enzyme, pathway, and term across the seven papers. Search to filter.</p>
+      <p style="color:var(--muted);font-size:.9rem;margin-top:0">Every enzyme, pathway, and term across the seven papers (${all.length} entries). Search to filter.</p>
       <input class="search" id="gsearch" placeholder="Search terms, enzymes, pathways…">
       <div id="glist"></div>`;
     const glist=document.getElementById('glist');
     function draw(f){
       const q=(f||"").toLowerCase();
       glist.innerHTML=all.filter(x=>!q||x.t.toLowerCase().includes(q)||x.d.toLowerCase().includes(q))
-        .map(x=>`<div class="gitem"><span class="gt">${esc(x.t)}</span>
-          <span class="gp">Paper ${x.p} · Group ${x.g}</span>
-          <div class="gd">${esc(x.d)}</div></div>`).join('') || `<p style="color:var(--muted)">No matches.</p>`;
+        .map(x=>`<div class="gitem"><span class="gt">${esc(x.t)}</span><span class="gp">Paper ${x.p} · Group ${x.g}</span><div class="gd">${esc(x.d)}</div></div>`).join('')
+        || `<p style="color:var(--muted)">No matches.</p>`;
     }
     draw("");
     document.getElementById('gsearch').oninput=e=>draw(e.target.value);
